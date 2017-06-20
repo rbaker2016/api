@@ -1,4 +1,7 @@
 #! /bin/sh
 # appLariat generic entrypoint.sh
 
-exec python app.py
+echo "Printing build log"
+cat /src/build.log
+
+exec @
