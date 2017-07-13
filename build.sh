@@ -8,18 +8,18 @@ logfile=/code/build.log
 exec > $logfile 2>&1
 set -x
 
+TAG=${1:-develop}
+APL_COMMON_TAG=${2:-develop}
+BB_API_KEY=$3
+
 mkdir -p /usr/src/app
-
-#Check for requirements.txt and throw exception if not present
-if [ -e /code/requirements.txt ]
-then
-    cp -rf /code/requirements.txt /usr/src/app/
-else
-    echo "ERROR! requirements.txt not found"
-    exit 1
-fi
-
 cp -rf /code/* /usr/src/app/
 cd /usr/src/app/
 
-pip install --no-cache-dir -r requirements.txt
+#pulling down and installing code
+apk add --no-cache openssl libc-dev gcc \
+	&& pip install . \
+    && pip install --upgrade https://applariat:$BB_API_KEY@bitbucket.org/applariat/apl-common/get/${APL_COMMON_TAG}.zip
+
+#cleaning after ourselves
+rm -rf /code

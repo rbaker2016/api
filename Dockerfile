@@ -1,4 +1,4 @@
-FROM python:latest
+FROM python:2.7-alpine
 
 ARG artifact_root="."
 
