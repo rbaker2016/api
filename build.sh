@@ -8,9 +8,9 @@ logfile=/code/build.log
 exec > $logfile 2>&1
 set -x
 
-TAG=${1:-develop}
-APL_COMMON_TAG=${2:-develop}
-BB_API_KEY=$3
+TAG=${TAG}
+APL_COMMON_TAG=${APL_COMMON_TAG}
+BB_API_KEY=${BB_API_KEY}
 
 mkdir -p /usr/src/app
 cp -rf /code/* /usr/src/app/
