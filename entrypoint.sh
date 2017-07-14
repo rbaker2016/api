@@ -7,6 +7,7 @@ cat /code/build.log
 APP="Application"
 
 echo "Starting API..."
+
 exec python - <<-EOF
 print "Running api.${APP}()"
 from apl_api import api
