@@ -5,6 +5,7 @@ echo "Printing build log"
 cat /tmp/build.log
 
 cat /test.txt
+cat /sec.txt
 
 APP="Application"
 
