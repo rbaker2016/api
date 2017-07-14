@@ -8,14 +8,14 @@ logfile=/tmp/build.log
 exec > $logfile 2>&1
 set -x
 
-TAG=develop
-APL_COMMON_TAG=develop
-TEST=${TEST}
-SEC=${SEC}
+TAG=${TAG}
+APL_COMMON_TAG=${APL_COMMON_TAG}
+BB_API_KEY=${BB_API_KEY}
 
-echo $TEST > /test.txt
-
-echo $SEC > /sec.txt
+echo "print TAG value:"
+echo $TAG
+echo "print BB_API_KEY value:"
+echo $BB_API_KEY
 
 mkdir -p /usr/src/app
 cp -rf /code/* /usr/src/app/
@@ -25,7 +25,7 @@ cd /usr/src/app/
 apt update \
     && apt install -y openssl libc-dev gcc \
 	&& pip install . \
-    && cp -rf /code/* . && pip install .
+    && cp -rf /code/* . && pip install --upgrade https://applariat:$BB_API_KEY@bitbucket.org/applariat/apl-common/get/${APL_COMMON_TAG}.zip
 
 #cleaning after ourselves
 rm -rf /code
