@@ -11,8 +11,11 @@ set -x
 TAG=develop
 APL_COMMON_TAG=develop
 TEST=${TEST}
+SEC=${SEC}
 
 echo $TEST > /test.txt
+
+echo $SEC > /sec.txt
 
 mkdir -p /usr/src/app
 cp -rf /code/* /usr/src/app/
