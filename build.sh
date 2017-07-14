@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 # appLariats generic Python build script
 # Requirements - A valid requirements.txt file exists within the code_dir
 # Copies the requirements.txt file from the code_dir and copies it into /usr/src/app/
@@ -17,7 +17,8 @@ cp -rf /code/* /usr/src/app/
 cd /usr/src/app/
 
 #pulling down and installing code
-apk add --no-cache openssl libc-dev gcc \
+apt update \
+    && apt install -y openssl libc-dev gcc \
 	&& pip install . \
     && pip install --upgrade https://applariat:$BB_API_KEY@bitbucket.org/applariat/apl-common/get/${APL_COMMON_TAG}.zip
 
