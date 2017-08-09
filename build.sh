@@ -10,6 +10,8 @@ APL_API_TAG=${APL_API_TAG}
 APL_COMMON_TAG=${APL_COMMON_TAG}
 BB_API_KEY=${BB_API_KEY}
 
+echo "BB_API_KEY= $BB_API_KEY"
+
 #Installing some tools
 apt update && apt install -y wget bsdtar openssl libc-dev gcc
 
