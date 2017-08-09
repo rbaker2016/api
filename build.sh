@@ -23,6 +23,6 @@ bsdtar -xf $APL_API_TAG.zip -s'|[^/]*/||' -C /usr/src/app
 cd /usr/src/app/
 ls -alh
 
-#Pulling down and installing apl-common code
-#pip install . \
-#    && pip install --upgrade https://applariat:$BB_API_KEY@bitbucket.org/applariat/apl-common/get/${APL_COMMON_TAG}.zip
+Pulling down and installing apl-common code
+pip install . \
+    && pip install --upgrade https://applariat:$BB_API_KEY@bitbucket.org/applariat/apl-common/get/${APL_COMMON_TAG}.zip
