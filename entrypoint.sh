@@ -1,8 +1,8 @@
 #! /bin/bash
 # appLariat generic entrypoint.sh
 
-echo "Printing build log"
-cat /tmp/build.log
+#echo "Printing build log"
+#cat /tmp/build.log
 
 APP="Application"
 
