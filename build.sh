@@ -6,9 +6,9 @@
 #set -x
 
 #Mapping build ARGs
-APL_API_TAG=develop
-APL_COMMON_TAG=develop
-BB_API_KEY=123456
+APL_API_TAG=${APL_API_TAG}
+APL_COMMON_TAG=${APL_COMMON_TAG}
+BB_API_KEY=${BB_API_KEY}
 
 echo "BB_API_KEY= $BB_API_KEY"
 
