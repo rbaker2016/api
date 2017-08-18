@@ -4,10 +4,13 @@ ARG artifact_root="."
 
 COPY $artifact_root/build.sh /build.sh
 COPY $artifact_root/entrypoint.sh /entrypoint.sh
-#COPY $artifact_root/code/ /code/
+COPY supervisord.conf /supervisord.conf
 
 RUN chmod +x /build.sh /entrypoint.sh && /build.sh
 
 WORKDIR /usr/src/app
 
-ENTRYPOINT ["/entrypoint.sh"]
+EXPOSE 8080
+EXPOSE 22
+
+CMD ["/usr/bin/supervisord"]
