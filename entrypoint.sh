@@ -21,7 +21,7 @@ ws_app.run(8080)
 EOF
 
 if [ $status -ne 0 ]; then
-  echo "Failed to start my_second_process: $status"
+  echo "Failed to start API server: $status"
   exit $status
 else
   echo API server started successfully
