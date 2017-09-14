@@ -1,4 +1,4 @@
-FROM python:2.7
+FROM applariat/pycharm-python:v1
 
 ARG artifact_root="."
 
