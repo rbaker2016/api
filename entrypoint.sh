@@ -20,6 +20,7 @@ ws_app = api.${APP}()
 ws_app.run(8080)
 EOF
 
+status=$?
 if [ $status -ne 0 ]; then
   echo "Failed to start API server: $status"
   exit $status
